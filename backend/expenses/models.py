@@ -46,7 +46,7 @@ class Expense(models.Model):
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
         self.category.last_used = self.created_at
-        self.category.save(update_fields=['last_updated'])
+        # self.category.save(update_fields=['last_updated'])
 
     def __str__(self):
         return f"{self.product.name}"
